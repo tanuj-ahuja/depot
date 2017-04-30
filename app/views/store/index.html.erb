@@ -1,0 +1,19 @@
+<h1>Catalog page</h1>
+<% @products.each do |product| %>
+<div class="prod">
+<div class="image">
+<%= image_tag(product.image_url, class: 'list_image') %>
+</div>
+<div class="title">
+  <h3><%= product.title %></h3>
+  <%= product.description %>
+  </div>
+  <div>
+  <span class="price"><%= number_to_currency(product.price) %>
+  <%= button_to 'Add to cart',lines_path(product_id:product)%>	
+  </span>
+  </div>
+  </div>
+
+  <br>
+ <% end %> 

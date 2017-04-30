@@ -1,0 +1,25 @@
+// Place all the styles related to the Store controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.prod{
+	    overflow: auto;
+	    min-height:100px;
+	    margin-top:1em;
+	    border-bottom:6px dotted #77d;
+}
+.image{
+	float:left;
+	padding-right: 50px;
+}
+.title{
+	float:top;
+
+}
+
+.price{
+	form,div{
+	display: inline;
+	}
+}
