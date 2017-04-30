@@ -27,12 +27,12 @@ class LinesController < ApplicationController
   # POST /lines.json
   def create
     product = Product.find(params[:product_id]) 
-    @line = @cart.lines.build(product: product)
+    @line = @cart.add_product(product)
 
 
     respond_to do |format|
       if @line.save
-        format.html { redirect_to @line.cart, notice: 'Line was successfully created.' }
+        format.html { redirect_to @line.cart }
         format.json { render :show, status: :created, location: @line }
       else
         format.html { render :new }
@@ -73,6 +73,6 @@ class LinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_params
-      params.require(:line).permit(:product_id, :cart_id)
+      params.require(:line).permit(:product_id)
     end
 end
