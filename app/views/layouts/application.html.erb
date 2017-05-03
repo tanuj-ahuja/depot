@@ -9,11 +9,22 @@
   </head>
 
   <body>
+  <div class="store">
    <div id="banner">
     <%= image_tag '#',alt:'The Pragmatic Bookshelf'  %>
    </div>
    <div id="columns">
     <div id="side">
+    <%if @cart %>
+    <div id ="cart" 
+          <% if @cart.lines.empty? %>
+           style="display: none"
+           <%end%>
+    >
+
+      <%= render @cart %>
+    </div>
+    <%end%>
      <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Questions</a></li>
@@ -28,5 +39,6 @@
     <%= yield %>
     </div>
    </div> 
+   </div>
   </body>
 </html>

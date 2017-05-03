@@ -39,5 +39,25 @@
 	padding: 1em;
 }
 
+#side{
+	padding: 1em 2em;
+	background: #141;
+	}
+
+#cart{
+		font-size:small;
+		color: white;
+	}
+
+  ul {
+         padding: 0;
+         li {
+           list-style: none;
+         a{
+           color: #bfb; 
+           font-size: small;
+} 
+}
+}
 
 

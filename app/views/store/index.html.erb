@@ -10,7 +10,8 @@
   </div>
   <div>
   <span class="price"><%= number_to_currency(product.price) %>
-  <%= button_to 'Add to cart',lines_path(product_id:product)%>	
+  <%= button_to 'Add to cart',lines_path(product_id:product),
+  remote: true%>	
   </span>
   </div>
   </div>
