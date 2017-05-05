@@ -6,4 +6,5 @@
 <td><%= line.quantity %>  &times; </td>
 <td><%= line.product.title %></td>
 <td class="item_price"><%= number_to_currency(line.total_price) %></td>
+<td><%= button_to 'Decrement',decrement_line_path(id:line),remote: true %> </td>
 </tr>

@@ -7,3 +7,7 @@ App.products = App.cable.subscriptions.create "ProductsChannel",
 
   received: (data) ->
     $(".store #main").html(data.html)
+    `$('#current_product').css({'background-color':'#88ff88'}).
+  animate({'background-color':'#ffffff'},1000);`
+
+   

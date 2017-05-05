@@ -1,8 +1,13 @@
 <h1>Catalog page</h1>
 <% @products.each do |product| %>
+<% if product== @current_product %>
+<div id="current_product" %>
+<% else %>
+<div>
+<% end %> 
 <div class="prod">
 <div class="image">
-<%= image_tag(product.image_url, class: 'list_image') %>
+<%= link_to(image_tag(product.image_url, class: 'list_image'),products_path)%>
 </div>
 <div class="title">
   <h3><%= product.title %></h3>
@@ -15,6 +20,6 @@
   </span>
   </div>
   </div>
-
+  </div>
   <br>
  <% end %> 

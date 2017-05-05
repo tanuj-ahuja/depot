@@ -1,6 +1,6 @@
 class LinesController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:create,:decrement]
   before_action :set_line, only: [:show, :edit, :update, :destroy]
 
   # GET /lines
@@ -55,6 +55,18 @@ class LinesController < ApplicationController
       end
     end
   end
+
+  def decrement
+    @line=Line.find(params[:id])
+    @line.d
+        respond_to do |format|
+
+    if @line.save
+      format.html { redirect_to root_url }
+      format.js
+    end
+    end
+  end 
 
   # DELETE /lines/1
   # DELETE /lines/1.json
